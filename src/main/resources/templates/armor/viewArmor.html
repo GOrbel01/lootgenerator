@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Viewing Armor</title>
+    <link th:href="@{/css/armor/Armor.css}" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <p th:text="${armor.nameUnique}"></p>
+                    <p th:text="*{armor.armorProperties.armorType.type}"></p>
+                    <p th:text="${armor.armorProperties.armorValue}"></p>
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                        <tr th:if="*{armor.stats.empty}">
+                            <td colspan="4">No Stats</td>
+                        </tr>
+                        <tr th:each="stat : ${armor.stats}">
+                            <td th:text="*{statMap.get('__${stat.stat}__')}">Text ...</td>
+                            <td th:text="*{stat.statValue}"></td>
+                        </tr>
+                        <!--            <tr th:each="item : ${statMap}">-->
+                        <!--                <td th:text="*{item.getKey()}">Text ...</td>-->
+                        <!--                <td th:text="*{item.getValue()}"></td>-->
+                        <!--                <td th:text="*{item.value}"></td>-->
+                        <!--            </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <!-- Test Hardcode Img -->
+                <img height="170px" width="80px" src="/img/MailArm_1.jpg" alt="Armor Piece">
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

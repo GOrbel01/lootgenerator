@@ -3,6 +3,7 @@ package org.fsq.json;
 import org.fsq.entity.TestEntity;
 import org.fsq.entity.item.armor.Armor;
 import org.fsq.entity.item.armor.detail.ArmorProperties;
+import org.fsq.entity.item.types.ArmorTypes;
 import org.fsq.entity.stats.armor.ArmorStatValues;
 import org.junit.After;
 import org.junit.Before;
@@ -51,7 +52,7 @@ public class LootItemSerializerTest {
 
         ArmorProperties ap = new ArmorProperties();
         ap.setArmorValue(500);
-        ap.setArmorType("Test Type");
+        ap.setArmorType(new ArmorTypes("Test Type"));
 
         Armor armor = new Armor("Plate Mail", null, null, ap);
         armor.setId(1L);
@@ -71,7 +72,7 @@ public class LootItemSerializerTest {
 
         ArmorProperties ap = new ArmorProperties();
         ap.setArmorValue(500);
-        ap.setArmorType("Test Type");
+        ap.setArmorType(new ArmorTypes("Test Type"));
         Armor armor = new Armor("Plate Mail", null, null, ap);
         armor.setStats(getStatsList());
         armor.setId(1L);

@@ -1,14 +1,16 @@
 package org.fsq.entity.item.armor.detail;
 
-import org.fsq.entity.stats.armor.ArmorStatValues;
+import org.fsq.entity.item.types.ArmorTypes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
-import java.util.List;
 
 @Entity
 public class ArmorProperties {
@@ -20,14 +22,15 @@ public class ArmorProperties {
     @Column(name = "armor_value")
     private Integer armorValue;
 
-    @Column(name = "armor_type")
-    private String armorType;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "armor_type_id", referencedColumnName = "Id")
+    private ArmorTypes armorType;
 
     public ArmorProperties() {
 
     }
 
-    public ArmorProperties(Integer armorValue, String armorType, List<ArmorStatValues> stats) {
+    public ArmorProperties(Integer armorValue, ArmorTypes armorType) {
         this.armorValue = armorValue;
         this.armorType = armorType;
     }
@@ -48,11 +51,11 @@ public class ArmorProperties {
         this.armorValue = armorValue;
     }
 
-    public String getArmorType() {
+    public ArmorTypes getArmorType() {
         return armorType;
     }
 
-    public void setArmorType(String armorType) {
+    public void setArmorType(ArmorTypes armorType) {
         this.armorType = armorType;
     }
 

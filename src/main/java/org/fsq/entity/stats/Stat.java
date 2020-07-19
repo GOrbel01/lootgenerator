@@ -36,4 +36,22 @@ public class Stat {
     public void setStatName(String statName) {
         this.statName = statName;
     }
+
+    @Override
+    public String toString() {
+        return statName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Stat stat = (Stat) o;
+        return Objects.equals(Id, stat.Id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id);
+    }
 }

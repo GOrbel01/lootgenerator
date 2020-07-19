@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add Armor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/general/General.css}" rel="stylesheet" />
+</head>
+    <h1>New Item</h1>
+    <body onload="setupJs()">
+    <form action="#" th:action="@{/armor/add}" th:object="${armor}" method="post">
+        <p id="uqCbRow"><label>Name Mode: </label><input type="checkbox" id="uqCb" checked onclick="handleUqNameCb()" name="uqCheck"></p>
+        <p id="unqNameRow">Name: <input type="text" th:field="*{nameUnique}" /></p>
+
+        <select th:field="*{armorProperties.armorType}">
+            <option th:each="item : ${allArmorTypes}"
+                    th:value="${item.id}"
+                    th:text="${item.type}">
+            </option>
+        </select>
+
+        <p>Armor Value: <input type="number" th:field="*{armorProperties.armorValue}" /></p>
+        <p>
+            <input type="button" value="Add Stat" onclick="addStatRow()"/>
+            <input type="button" value="Remove Stat" onclick="removeLastStatRow()"/>
+        </p>
+        <div th:each="num: ${#numbers.sequence(0, 9)}">
+            <p th:id="'sv' + ${num}" th:hidden="true">
+                <select th:field="*{stats[__${num}__].stat}">
+                    <option th:each="item : ${allStats}"
+                            th:value="${item.id}"
+                            th:text="${item.statName}">
+                    </option>
+                </select>
+                Stat Value: <input type="number" th:field="*{stats[__${num}__].statValue}" />
+            </p>
+        </div>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    </body>
+    <script type="text/javascript" th:src="@{/js/armor/ArmorFormController.js}"></script>
+    <script type="application/javascript" th:src="@{/js/lib/jquery-3.5.1.js/}"></script>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Add Armor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/general/General.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 th:if="${result}" th:text="${result}" th:class="${'alert ' + alertClass}"/>
+<div th:if="${message}" th:text="${message}"/>
+</body>
+</html>

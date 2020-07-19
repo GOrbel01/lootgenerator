@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>View Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/general/General.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 th:text="${message}" th:class="${'alert ' + alertClass}"/>
+</body>
+</html>

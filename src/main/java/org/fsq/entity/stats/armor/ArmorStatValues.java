@@ -28,6 +28,12 @@ public class ArmorStatValues {
 
     }
 
+    public ArmorStatValues(Integer stat, Integer statValue) {
+        this.armorId = armorId;
+        this.stat = stat;
+        this.statValue = statValue;
+    }
+
     public ArmorStatValues(Long armorId, Integer stat, Integer statValue) {
         this.armorId = armorId;
         this.stat = stat;

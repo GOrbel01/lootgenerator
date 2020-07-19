@@ -29,6 +29,9 @@ public class Armor {
     @Column(name = "name_prefix")
     private String namePrefix;
 
+    @Column(name = "name_middle")
+    private String nameMiddle;
+
     @Column(name = "name_suffix")
     private String nameSuffix;
 
@@ -77,6 +80,14 @@ public class Armor {
 
     public void setNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
+    }
+
+    public String getNameMiddle() {
+        return nameMiddle;
+    }
+
+    public void setNameMiddle(String nameMiddle) {
+        this.nameMiddle = nameMiddle;
     }
 
     public String getNameSuffix() {

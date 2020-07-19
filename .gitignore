@@ -10,3 +10,5 @@ mvnw.cmd
 /*.json
 HELP.md
 application.properties
+lib
+img
