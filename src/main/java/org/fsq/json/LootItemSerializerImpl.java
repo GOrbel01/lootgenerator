@@ -1,6 +1,7 @@
 package org.fsq.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,7 @@ public class LootItemSerializerImpl implements LootItemSerializer {
     @Autowired
     public LootItemSerializerImpl() {
         om = new ObjectMapper();
+        om.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
     }
 
     public void writeItem(File f, Object o) throws IOException {

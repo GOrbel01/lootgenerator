@@ -1,6 +1,5 @@
 package org.fsq.api.armor;
 
-import org.fsq.entity.item.armor.Armor;
 import org.fsq.entity.item.types.ArmorTypes;
 import org.fsq.entity.stats.Stat;
 import org.fsq.io.repo.armor.ArmorRepository;

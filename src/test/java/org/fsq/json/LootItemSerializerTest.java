@@ -54,7 +54,7 @@ public class LootItemSerializerTest {
         ap.setArmorValue(500);
         ap.setArmorType(new ArmorTypes("Test Type"));
 
-        Armor armor = new Armor("Plate Mail", null, null, ap);
+        Armor armor = new Armor("Plate Mail", null, null, ap, new ArrayList<>());
         armor.setId(1L);
         armor.setStats(getStatsList());
         lootItemSerializer.writeItem(f, armor);
@@ -73,7 +73,7 @@ public class LootItemSerializerTest {
         ArmorProperties ap = new ArmorProperties();
         ap.setArmorValue(500);
         ap.setArmorType(new ArmorTypes("Test Type"));
-        Armor armor = new Armor("Plate Mail", null, null, ap);
+        Armor armor = new Armor("Plate Mail", null, null, ap, new ArrayList<>());
         armor.setStats(getStatsList());
         armor.setId(1L);
 

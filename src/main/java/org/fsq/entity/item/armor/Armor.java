@@ -47,11 +47,12 @@ public class Armor {
 
     }
 
-    public Armor(String nameUnique, String namePrefix, String nameSuffix, ArmorProperties armorProperties) {
+    public Armor(String nameUnique, String namePrefix, String nameSuffix, ArmorProperties armorProperties, List<ArmorStatValues> stats) {
         this.nameUnique = nameUnique;
         this.namePrefix = namePrefix;
         this.nameSuffix = nameSuffix;
         this.armorProperties = armorProperties;
+        this.stats = stats;
     }
 
     public Armor(ArmorProperties armorProperties) {
