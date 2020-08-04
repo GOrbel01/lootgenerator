@@ -5,10 +5,11 @@
 *.ipr
 .mvn
 target
-mvnw
-mvnw.cmd
+lootgeneratorapi/mvnw
+lootgeneratorapi/mvnw.cmd
 /*.json
 HELP.md
-application.properties
+lootgeneratorapi/src/main/resources/application.properties
 lib
 img
+quickdtocore-1.1.jar
